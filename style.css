@@ -557,7 +557,13 @@ table td {
 		position: relative;
 		width: 130px;
 	}
+
+	#calendar .abv {
+		max-width: 52px;
+	}
 }
+
+
 
 
 /*vagas de estagio*/
