@@ -464,13 +464,13 @@ a:focus {
 table td {
 	padding: 10px;
 	text-align: center;
-	max-width:auto;
+	max-width: auto;
 }
 
 #calendar table th {
 	background-color: #8C52FF;
 	color: white;
-	
+
 }
 
 #calendar table tr:nth-child(even) {
@@ -523,49 +523,50 @@ table td {
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
-	width: auto;
+	width:auto;
 	height: auto;
 }
 
 #calendar .legenda table {
+	position: relative;
 	margin-right: 20px;
 	border: 1px solid #c0c0c0;
 }
 
 #calendar .quadro {
 	margin-top: 10px;
+	position:static;
+	width: auto;
 }
 
 #calendar .tabcontente {
-	position: sticky;
 	display: none;
-	padding: 5px;
 	align-content: center;
-	width: 300px;
+	width: auto
+}
+
+#calendar .abv {
+	overflow: hidden;
+	text-overflow: "";
+	white-space: nowrap;
+	width: 58px;
+}
+
+@media (max-width: 448px) {
+	.info table{
+		position: relative;
+		width: 130px;
+	}
 }
 
 
-
-	#calendar .abv {
-  		overflow: hidden;
-  		text-overflow: "";
-  		white-space: nowrap;
-		width: 58px;
-	}
-
-
-
-
-
 /*vagas de estagio*/
-	#vagas #principal{
-		border:1px solid red;
-		max-height: auto;
+#vagas #principal {
+	border: 1px solid red;
+	max-height: auto;
 
-	}
+}
 
-	#vagas .botao{
-		background:rgb(64, 5, 119);
-	}
-
-
+#vagas .botao {
+	background: rgb(64, 5, 119);
+}
