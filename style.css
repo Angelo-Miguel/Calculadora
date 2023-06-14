@@ -551,15 +551,19 @@ table td {
 	white-space: nowrap;
 	width: 58px;
 }
-
+.comabv{display: none}
 @media (max-width: 448px) {
 	.info table{
 		position: relative;
 		width: 130px;
 	}
 
-	#calendar .abv {
-		max-width: 52px;
+	#calendar .semabv {
+		display: none;
+	}
+	#calendar .comabv {
+		display:block;
+		line-height: 165px;
 	}
 }
 
