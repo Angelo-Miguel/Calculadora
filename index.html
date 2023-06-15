@@ -47,58 +47,86 @@
 
 </head>
 
-<body>
+<body onload="myFunction()">
 	<header></header>
 	<div id="calendar">
 		<script>
 			function openCity(evt, cityName) {
-				var i, tabcontent, tablinks;
-				tabcontent = document.getElementsByClassName("tabcontent");
-				for (i = 0; i < tabcontent.length; i++) {
-					tabcontent[i].style.display = "none";
+				var i, tabreplacepage, tablinkpage;
+				tabreplacepage = document.getElementsByClassName("tabreplacepage");
+				for (i = 0; i < tabreplacepage.length; i++) {
+					tabreplacepage[i].style.display = "none";
 				}
-				tablinks = document.getElementsByClassName("tablinks");
-				for (i = 0; i < tablinks.length; i++) {
-					tablinks[i].className = tablinks[i].className.replace(" active", "");
+				tablinkpage = document.getElementsByClassName("tablinkpage");
+				for (i = 0; i < tablinkpage.length; i++) {
+					tablinkpage[i].className = tablinkpage[i].className.replace(" active", "");
 				}
 				document.getElementById(cityName).style.display = "block";
 				evt.currentTarget.className += " active";
 			}
+
+			function openday(evt, dayName) {
+				var i, tabreplacequadro, tablinkquadro;
+				tabreplacequadro = document.getElementsByClassName("tabreplacequadro");
+				for (i = 0; i < tabreplacequadro.length; i++) {
+					tabreplacequadro[i].style.display = "none";
+				}
+				tablinkquadro = document.getElementsByClassName("tablinkquadro");
+				for (i = 0; i < tablinkquadro.length; i++) {
+					tablinkquadro[i].className = tablinkquadro[i].className.replace(" active", "");
+				}
+				document.getElementById(dayName).style.display = "block";
+				evt.currentTarget.className += " active";
+			}
 		</script>
 
+<script>
+	const date = new Date();
+	let day = date.getDate();
+
+
+	function myFunction() {
+		if (day != 3 && day != 7  && day != 8 && day != 9 && day != 14 && day != 21 && day != 26 && day != 28 && day != 30){
+			document.getElementById("dia").style.display = "block";
+			document.getElementById("fdia").innerHTML = day;
+			document.getElementById("finfo").innerHTML = "Dia de aula";
+		}else{
+			document.getElementById(day).style.display = "block";
+		}
+		
+
+		if (day == 4 || day == 10 || day == 11 || day == 17 || day == 18 || day == 24 || day == 25 || day == 31){
+			document.getElementById("finfo").innerHTML = "Dia de folga";
+		}
+	}
+
+</script>
+
 		<div class="tab">
-			<button class="tablinks active" onclick="openCity(event, 'calendario')">Calendário</button>
-			<button class="tablinks" onclick="openCity(event, 'horario')">Horário</button>
+			<button class="tablinkpage active" onclick="openCity(event, 'calendario')">Calendário</button>
+			<button class="tablinkpage" onclick="openCity(event, 'horario')">Horário</button>
 		</div>
-		<div id="calendario" class="tabcontent" style="display: block;">
-			<script>
-				function openday(evt, dayName) {
-					var i, tabcontente, tablinkss;
-					tabcontente = document.getElementsByClassName("tabcontente");
-					for (i = 0; i < tabcontente.length; i++) {
-						tabcontente[i].style.display = "none";
-					}
-					tablinkss = document.getElementsByClassName("tablinkss");
-					for (i = 0; i < tablinkss.length; i++) {
-						tablinkss[i].className = tablinkss[i].className.replace(" active", "");
-					}
-					document.getElementById(dayName).style.display = "block";
-					evt.currentTarget.className += " active";
-				}
-				
-			</script>
-			<table style="table-layout: fixed; width: 350px;">
+		<div id="calendario" class="tabreplacepage" style="display: block;">
+			<table style="table-layout: fixed;">
 				<tr>
 					<th colspan="7">Junho</th>
 				</tr>
 				<tr>
-					<th class="abv">Segunda</th>
-					<th class="abv">&nbspTerça</th>
-					<th class="abv">Quarta</th>
-					<th class="abv">&nbspQuinta</th>
-					<th class="abv">&nbspSexta</th>
-					<th class="abv">Sábado</th>
-					<th class="abv" style="padding:7px;">Domingo</th>
+					<th class="semabv">Segunda</th>
+					<th class="semabv">Terça</th>
+					<th class="semabv">Quarta</th>
+					<th class="semabv">Quinta</th>
+					<th class="semabv">Sexta</th>
+					<th class="semabv">Sábado</th>
+					<th class="semabv">Domingo</th>
+
+					<th class="comabv">Seg</th>
+					<th class="comabv">Ter</th>
+					<th class="comabv">Qua</th>
+					<th class="comabv">Qui</th>
+					<th class="comabv">Sex</th>
+					<th class="comabv">Sáb</th>
+					<th class="comabv">Dom</th>
 				</tr>
 				<tr>
 					<td>29</td>
@@ -106,22 +134,22 @@
 					<td>31</td>
 					<td>1</td>
 					<td>2</td>
-					<td class="tablinkss avisos" onclick="openday(event, 'day3')">3</td>
+					<td class="tablinkquadro avisos" onclick="openday(event, '3')">3</td>
 					<td class="domingo">4</td>
 				</tr>
 				<tr>
 					<td>5</td>
 					<td>6</td>
-					<td class="tablinkss or" onclick="openday(event, 'day7')">7</td>
-					<td class="tablinkss semaula" onclick="openday(event, 'day8')">8</td>
-					<td class="tablinkss semaula" onclick="openday(event, 'day9')">9</td>
+					<td class="tablinkquadro or" onclick="openday(event, '7')">7</td>
+					<td class="tablinkquadro semaula" onclick="openday(event, '8')">8</td>
+					<td class="tablinkquadro semaula" onclick="openday(event, '9')">9</td>
 					<td td class="semaula">10</td>
 					<td class="domingo">11</td>
 				</tr>
 				<tr>
 					<td>12</td>
 					<td>13</td>
-					<td class="tablinkss or" onclick="openday(event, 'day14')">14</td>
+					<td class="tablinkquadro or" onclick="openday(event, '14')">14</td>
 					<td>15</td>
 					<td>16</td>
 					<td class="semaula">17</td>
@@ -130,22 +158,26 @@
 				<tr>
 					<td>19</td>
 					<td>20</td>
-					<td class="tablink or" onclick="openday(event, 'day21')">21</td>
+					<td class="tablink or" onclick="openday(event, '21')">21</td>
 					<td>22</td>
 					<td>23</td>
 					<td td class="semaula">24</td>
 					<td class="domingo">25</td>
 				</tr>
 				<tr>
-					<td class="tablinkss avisos" onclick="openday(event, 'day26')">26</td>
+					<td class="tablinkquadro avisos" onclick="openday(event, '26')">26</td>
 					<td>27</td>
-					<td class="tablink or" onclick="openday(event, 'day28')">28</td>
+					<td class="tablink or" onclick="openday(event, '28')">28</td>
 					<td>29</td>
-					<td class="tablink avisos" onclick="openday(event, 'day30')">30</td>
+					<td class="tablink avisos" onclick="openday(event, '30')">30</td>
 					<td td class="semaula">31</td>
 					<td class="domingo">1</td>
 				</tr>
 			</table>
+
+
+		
+			 
 
 			<div class="legenda">
 				<div class="info">
@@ -163,48 +195,56 @@
 				</div>
 
 				<div class="quadro center">
-					<div id="day3" class="tabcontente" style="display:none;">
+
+					
+
+					<div id="3" class="tabreplacequadro" style="display:none;">
 						<h1>Dia 3</h1>
 						<p>Sábado Letivo referente ao dia 20/02 (segunda-feira)</p>
 					</div>
-					<div id="day7" class="tabcontente" style="display:none;">
+					<div id="7" class="tabreplacequadro" style="display:none;">
 						<h1>Dia 7</h1>
 						<p>Reunião da Direção</p>
 					</div>
-					<div id="day8" class="tabcontente" style="display:none;">
+					<div id="8" class="tabreplacequadro" style="display:none;">
 						<h1>Dia 8</h1>
 						<p>Feriado Nacional (Corpus Christi)</p>
 					</div>
-					<div id="day9" class="tabcontente" style="display:none;">
+					<div id="9" class="tabreplacequadro" style="display:none;">
 						<h1>Dia 9</h1>
 						<p>Suspensão de Atividades<p>
 					</div>
-					<div id="day14" class="tabcontente" style="display:none;">
+					<div id="14" class="tabreplacequadro" style="display:none;">
 						<h1>Dia 14</h1>
 						<p>Reunião de Curso<p>
 					</div>
-					<div id="day21" class="tabcontente" style="display:none;">
+					<div id="21" class="tabreplacequadro" style="display:none;">
 						<h1>Dia 21</h1>
 						<p>Reunião da Direção</p>
 					</div>
-					<div id="day26" class="tabcontente" style="display:none;">
+					<div id="26" class="tabreplacequadro" style="display:none;">
 						<h1>Dia 26</h1>
 						<p>Reunião do Conselho</p>
 					</div>
-					<div id="day28" class="tabcontente" style="display:none;">
+					<div id="28" class="tabreplacequadro" style="display:none;">
 						<h1>Dia 28</h1>
 						<p>Reunião da Direção</p>
 					</div>
-					<div id="day30" class="tabcontente" style="display:none;">
+					<div id="30" class="tabreplacequadro" style="display:none;">
 						<h1>Dia 30</h1>
 						<p>Fim das Aulas 1º Semestre</p>
+					</div>
+
+					<div id="dia" class="tabreplacequadro" style="display:none;">
+						<h1>Dia <span id="fdia">1</span></h1>
+						<p id="finfo"></p>
 					</div>
 				</div>
 			</div>
 		</div>
 
 
-		<div id="horario" class="tabcontent">
+		<div id="horario" class="tabreplacepage">
 			<table>
 				<tr>
 					<th>Dia</th>
