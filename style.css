@@ -508,6 +508,7 @@ table td {
 
 #calendar table td.tablink:hover {
 	background-color: #ddd;
+	cursor: pointer;
 }
 
 #calendar table td.avisos {
