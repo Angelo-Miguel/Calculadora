@@ -65,8 +65,8 @@ header nav button.dropdown-toggle,
 header nav button.dropdown-toggle:hover,
 header nav button.dropdown-toggle:active,
 header nav button.btn-secondary:not(:disabled):not(.disabled):active,
-.btn-secondary:focus,
-.navbar-toggler:focus {
+header nav button.btn-secondary:focus,
+header nav button.navbar-toggler:focus {
 	outline: none;
 	border: none;
 	background-color: transparent !important;
@@ -112,6 +112,8 @@ header nav .dropdown-menu {
 
 header nav .dropdown-menu.show {
 	display: flex;
+	position: absolute;
+	left: -100px;
 }
 
 header nav .dropdown-menu li a {
@@ -126,20 +128,52 @@ header nav .dropdown-menu li a:hover {
 }
 
 .mobile {
-	display: none;
+	display: none !important;
 }
 
 @media (max-width: 992px) {
 	header nav .links-principais {
 		gap: 20px;
+		display: flex !important;
+		padding: 0;
 	}
 
 	.mobile {
-		display: block;
+		display: block !important;
 	}
 
 	.desktop {
 		display: none;
+	}
+}
+
+@media (max-width: 440px) {
+	header nav .links-principais.mobile li:nth-child(1) {
+		display: none !important;
+	}
+
+	.links-principais.navbar-nav.mr-auto li:nth-child(1) {
+		display: block;
+	}
+}
+
+@media (max-width: 376px) {
+	header nav .links-principais.mobile li:nth-child(2) {
+		display: none !important;
+	}
+
+	.links-principais.navbar-nav.mr-auto li:nth-child(2) {
+		display: block;
+	}
+}
+
+@media (max-width: 286px) {
+	header nav .links-principais.mobile li:nth-child(3) {
+		display: none !important;
+	}
+
+	.links-principais.navbar-nav.mr-auto li:nth-child(3) {
+		display: block;
 	}
 }
 
@@ -152,11 +186,12 @@ header nav .dropdown-menu li a:hover {
 
 .card-body {
 	text-align: center;
-	background: deeppink;
+	background: rgb(88, 0, 133);
 	color: #fff;
 	border-radius: 20px;
 	padding: 20px;
 	height: 230px;
+	min-width: 200px;
 
 }
 
@@ -190,9 +225,13 @@ footer {
 	padding: 10px 0;
 }
 
-.container {
+footer .container {
 	display: flex;
-	justify-content: space-between;
+	justify-content: space-around;
+	gap: 30px;
+	flex-wrap: wrap;
+
+
 }
 
 
@@ -358,7 +397,7 @@ a:focus {
 
 /* Achados e perdidos */
 #principal {
-	width: 1544px;
+	flex-wrap: wrap;
 	max-height: auto;
 	padding: 0px;
 	margin: 0px;
@@ -408,11 +447,7 @@ a:focus {
 	margin: 0 auto;
 }
 
-.div-achados {
-	border-right: 1px solid rgb(173, 173, 173);
-	max-width: 1000px;
-	margin-left: 3px;
-}
+#div-achados {}
 
 #achados-perdido p {
 	font-weight: normal;
@@ -460,7 +495,7 @@ a:focus {
 	border-collapse: collapse;
 	border: 1px solid #c0c0c0;
 	width: 100%;
-  	text-align: center;
+	text-align: center;
 }
 
 #calendar table th,
@@ -555,7 +590,7 @@ table td {
 @media (max-width: 576px) {
 	.info table {
 		position: relative;
-		min-width:130px;
+		min-width: 130px;
 	}
 
 	#calendar .semabv {
@@ -573,15 +608,9 @@ table td {
 }
 
 
-
-
 /*vagas de estagio*/
-#vagas #principal {
-	border: 1px solid red;
-	max-height: auto;
-
-}
+#vagas #principal {}
 
 #vagas .botao {
-	background: rgb(64, 5, 119);
+	background: rgb(174, 11, 255);
 }
