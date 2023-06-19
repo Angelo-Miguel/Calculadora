@@ -603,7 +603,11 @@ table td {
 	#calendar th.comabv {
 		display: table-cell;
 	}
-}
+
+
+#calendar .legenda table { 
+         max-width:100px;
+ }}
 
 
 /*vagas de estagio*/
