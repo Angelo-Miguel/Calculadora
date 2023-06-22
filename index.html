@@ -9,7 +9,7 @@
 <body>
 	<script>
 		function send(){
-			var button = document.getElementsByName(name);
+			var button = document.getElementsByName('name')[0].value;a
 			document.getElementById("demo"). innerHTML = button;
 		}
 	</script>
@@ -32,7 +32,7 @@
 					<tr>
 						<td><button type="button" name="1" id="1" onclick="send()">1</button></td>
 						<td><button type="button" name="2" id="2" onclick="send()">2</button></td>
-						<td><button type="button" name="3" id="4" onclick="send()">3</button></td>
+						<td><button type="button" name="3" id="3" onclick="send()">3</button></td>
 					</tr>
 					<tr>
 						<td><button type="button" name="0">0</button></td>
