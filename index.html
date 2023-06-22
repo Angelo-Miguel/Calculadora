@@ -8,9 +8,10 @@
 </head>
 <body>
 	<script>
-		function send(buttonValue){
-			buttonValue += buttonValue;
-			document.getElementById("demo").innerHTML = buttonValue;
+		function send(buttonValue) {
+			var currentValue = document.getElementById("demo").innerHTML;
+			var updatedValue = currentValue + buttonValue;
+			document.getElementById("demo").innerHTML = updatedValue;
 		}
 	</script>
 	<p id="demo">teste</p>
