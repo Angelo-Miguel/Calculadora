@@ -13,8 +13,13 @@
 			var updatedValue = currentValue + buttonValue;
 			document.getElementById("demo").innerHTML = updatedValue;
 		}
+
+		function clear(){
+			currentValue = 0;
+			document.getElementById("demo").innerHTML = "";
+		}
 	</script>
-	<p id="demo">teste</p>
+	<p id="demo"></p>
 	<div id="calculadora">
 		<form method="post">
 
@@ -37,6 +42,8 @@
 					</tr>
 					<tr>
 						<td><button type="button" value="0" onclick="send(this.value)">0</button></td>
+						<td><button type="button" value="." onclick="send(this.value)">.</button></td>
+						<td><button type="button" value="c" onclick="clear()">C</button></td>
 					</tr>
 				</tbody>
 			</table>
