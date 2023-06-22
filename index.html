@@ -9,7 +9,7 @@
 <body>
 	<script>
 		function send(){
-			var button = document.getElementsByClassName('button');
+			var button = document.getElementsByName(name);
 			document.getElementById("demo"). innerHTML = button;
 		}
 	</script>
@@ -20,7 +20,7 @@
 			<table>
 				<tbody>
 					<tr>
-						<td><button type="button" name="7" id="7" onclick="send()">7</button></td>
+						<td><button type="button" name="7" id="7" onclick="send(name)">7</button></td>
 						<td><button type="button" name="8" id="8" onclick="send()">8</button></td>
 						<td><button type="button" name="9" id="9" onclick="send()">9</button></td>
 					</tr>
