@@ -10,11 +10,13 @@ table{
 .operador{
 	border-radius: 100%;
 	background-color:aqua;
+	border: 0px transparent;
 }
 
 .numero{
 	border-radius: 100%;
 	background-color:rgb(100, 100, 100);
+	border: 0px transparent;
 }
 
 .visor{
@@ -23,6 +25,7 @@ table{
 }
 
 .escrito{
+	color: aliceblue;
 	border: 1px solid gray;
 	padding: 11px;
 	margin: 0px;
@@ -35,4 +38,5 @@ button{
 	width: 50px;
 	height: 50px;
 	font-size: large;
+	color: aliceblue;
 }
