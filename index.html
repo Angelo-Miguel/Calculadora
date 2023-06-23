@@ -48,7 +48,7 @@
 				case '/':
 					result = parseFloat(number1) / number2;
 					break;
-				case '^':
+				case 'pow':
 					result = parseFloat(number1) ** number2;
 					break;
 				case 'sqrt':
@@ -73,7 +73,7 @@
 					<tbody>
 						<tr>
 							<td><button type="button" onclick="limparvisor()">C</button></td>
-							<td><button type="button" value="**" onclick="operador(this.value)">^</button></td>
+							<td><button type="button" value="pow" onclick="operador(this.value)">^</button></td>
 							<td><button type="button" value="sqrt" onclick="operador(this.value)">√</button></td>
 							<td><button type="button" value="/" onclick="operador(this.value)">/</button></td>
 						</tr>
