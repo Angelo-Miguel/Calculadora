@@ -13,7 +13,7 @@
 			var currentValue = document.getElementById("visor").innerHTML;
 			var updatedValue = currentValue + valorbotao;
 
-			var maxLength = 15; // Set the desired character limit
+			var maxLength = 15;
 			if (updatedValue.length > maxLength) {
 				updatedValue = updatedValue.substring(0, maxLength);
 			}
@@ -80,34 +80,34 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><button type="button" onclick="limparvisor()">C</button></td>
-							<td><button type="button" value="pow" onclick="operador(this.value)">^</button></td>
-							<td><button type="button" value="sqrt" onclick="operador(this.value)">√</button></td>
-							<td><button type="button" value="/" onclick="operador(this.value)">/</button></td>
+							<td><button class="limpar" type="button" onclick="limparvisor()">C</button></td>
+							<td><button class="operador" type="button" value="pow" onclick="operador(this.value)">^</button></td>
+							<td><button class="operador" type="button" value="sqrt" onclick="operador(this.value)">√</button></td>
+							<td><button class="operador" type="button" value="/" onclick="operador(this.value)">/</button></td>
 						</tr>
 						<tr>
-							<td><button type="button" accesskey="7" value="7" onclick="enviarnumero(this.value)">7</button></td>
-							<td><button type="button" accesskey="8" value="8" onclick="enviarnumero(this.value)">8</button></td>
-							<td><button type="button" accesskey="9" value="9" onclick="enviarnumero(this.value)">9</button></td>
-							<td><button type="button" value="*" onclick="operador(this.value)">x</button></td>
+							<td><button class="numero" type="button" accesskey="7" value="7" onclick="enviarnumero(this.value)">7</button></td>
+							<td><button class="numero" type="button" accesskey="8" value="8" onclick="enviarnumero(this.value)">8</button></td>
+							<td><button class="numero" type="button" accesskey="9" value="9" onclick="enviarnumero(this.value)">9</button></td>
+							<td><button class="operador" type="button" value="*" onclick="operador(this.value)">x</button></td>
 						</tr>
 						<tr>
-							<td><button type="button" value="4" onclick="enviarnumero(this.value)">4</button></td>
-							<td><button type="button" value="5" onclick="enviarnumero(this.value)">5</button></td>
-							<td><button type="button" value="6" onclick="enviarnumero(this.value)">6</button></td>
-							<td><button type="button" value="-" onclick="operador(this.value)">-</button></td>
+							<td><button class="numero" type="button" value="4" onclick="enviarnumero(this.value)">4</button></td>
+							<td><button class="numero" type="button" value="5" onclick="enviarnumero(this.value)">5</button></td>
+							<td><button class="numero" type="button" value="6" onclick="enviarnumero(this.value)">6</button></td>
+							<td><button class="operador" type="button" value="-" onclick="operador(this.value)">-</button></td>
 						</tr>
 						<tr>
-							<td><button type="button" value="1" onclick="enviarnumero(this.value)">1</button></td>
-							<td><button type="button" value="2" onclick="enviarnumero(this.value)">2</button></td>
-							<td><button type="button" value="3" onclick="enviarnumero(this.value)">3</button></td>
-							<td><button type="button" value="+" onclick="operador(this.value)">+</button></td>
+							<td><button class="numero" type="button" value="1" onclick="enviarnumero(this.value)">1</button></td>
+							<td><button class="numero" type="button" value="2" onclick="enviarnumero(this.value)">2</button></td>
+							<td><button class="numero" type="button" value="3" onclick="enviarnumero(this.value)">3</button></td>
+							<td><button class="operador" type="button" value="+" onclick="operador(this.value)">+</button></td>
 						</tr>
 						<tr>
-							<td><button type="button" value="0" onclick="enviarnumero(this.value)">0</button></td>
-							<td><button type="button" value="." onclick="enviarnumero(this.value)">.</button></td>
-							<td><button type="button" onclick="limpardigito()">⌫</button></td>
-							<td><button type="button" onclick="igual()">=</button></td>
+							<td><button class="numero" type="button" value="0" onclick="enviarnumero(this.value)">0</button></td>
+							<td><button class="numero" type="button" value="." onclick="enviarnumero(this.value)">.</button></td>
+							<td><button class="numero" type="button" onclick="limpardigito()">⌫</button></td>
+							<td><button class="operador" type="button" onclick="igual()">=</button></td>
 						</tr>
 					</tbody>
 				</table>

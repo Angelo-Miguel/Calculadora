@@ -4,7 +4,17 @@ body{
 
 table{
 	margin: auto;
-	border: 1px solid gray;
+	background-color: rgb(69, 69, 69);
+}
+
+.operador{
+	border-radius: 100%;
+	background-color:aqua;
+}
+
+.numero{
+	border-radius: 100%;
+	background-color:rgb(100, 100, 100);
 }
 
 .visor{
