@@ -26,8 +26,8 @@
 		}
 
 		function limpardigito(){
-			currentValue = updatedValue.slice(0, -1);
-			enviarnumero();
+			updatedValue = updatedValue.slice(0, -1);
+			document.getElementById("visor").innerHTML = updatedValue;
 		}
 
 		function igual() {
