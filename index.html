@@ -13,6 +13,11 @@
 			var currentValue = document.getElementById("visor").innerHTML;
 			var updatedValue = currentValue + valorbotao;
 			document.getElementById("visor").innerHTML = updatedValue;
+
+			var maxLength = 15; // Set the desired character limit
+			if (updatedValue.length > maxLength) {
+				updatedValue = updatedValue.substring(0, maxLength);
+			}
 		}
 
 		function limpardigito(){
