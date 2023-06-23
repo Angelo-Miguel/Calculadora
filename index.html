@@ -8,6 +8,7 @@
 </head>
 <body>
 	<script>
+
 		function send(buttonValue) {
 			var currentValue = document.getElementById("visor").innerHTML;
 			var updatedValue = currentValue + buttonValue;
@@ -18,39 +19,87 @@
 			document.getElementById("visor").innerHTML = "";
 		}
 
+		function operador(testeop) {
+			number1 = document.getElementById("visor").innerHTML;
+			operator1 = testeop;
+			document.getElementById("visor").innerHTML = '';
+		}
+
+		function igual() {
+			var number2 = parseFloat(document.getElementById("visor").innerHTML);
+			var result = "";
+
+			switch (operator1) {
+				case '+':
+					result = parseFloat(number1) + number2;
+					break;
+				case '-':
+					result = parseFloat(number1) - number2;
+					break;
+				case '*':
+					result = parseFloat(number1) * number2;
+					break;
+				case '/':
+					result = parseFloat(number1) / number2;
+					break;
+				case '^':
+					result = parseFloat(number1) ** number2;
+					break;
+				case 'sqrt':
+					result = Math.sqrt(parseFloat(number1));
+					break;
+				default:
+					result = '';
+			}
+
+			document.getElementById("visor").innerHTML = result.toString();
+		}
+
+
 	</script>
-	<p id="visor"></p>
 	<div id="calculadora">
-		<form method="post">
+		<div class="calc">
+			<form method="post">
+				<table border="1px solid gray">
+					<thead>
+						<td colspan="4" class="visor"><p id="visor" class="escrito"></p></td>
+					</thead>
+					<tbody>
+						<tr>
+							<td><button type="button" onclick="clearvisor()">C</button></td>
+							<td><button type="button" value="**" onclick="operador(this.value)">^</button></td>
+							<td><button type="button" value="sqrt" onclick="operador(this.value)">√</button></td>
+							<td><button type="button" value="/" onclick="operador(this.value)">/</button></td>
+						</tr>
+						<tr>
+							<td><button type="button" value="7" onclick="send(this.value)">7</button></td>
+							<td><button type="button" value="8" onclick="send(this.value)">8</button></td>
+							<td><button type="button" value="9" onclick="send(this.value)">9</button></td>
+							<td><button type="button" value="*" onclick="operador(this.value)">x</button></td>
+						</tr>
+						<tr>
+							<td><button type="button" value="4" onclick="send(this.value)">4</button></td>
+							<td><button type="button" value="5" onclick="send(this.value)">5</button></td>
+							<td><button type="button" value="6" onclick="send(this.value)">6</button></td>
+							<td><button type="button" value="-" onclick="operador(this.value)">-</button></td>
+						</tr>
+						<tr>
+							<td><button type="button" value="1" onclick="send(this.value)">1</button></td>
+							<td><button type="button" value="2" onclick="send(this.value)">2</button></td>
+							<td><button type="button" value="3" onclick="send(this.value)">3</button></td>
+							<td><button type="button" value="+" onclick="operador(this.value)">+</button></td>
+						</tr>
+						<tr>
+							<td><button type="button" value="0" onclick="send(this.value)">0</button></td>
+							<td><button type="button" value="." onclick="send(this.value)">.</button></td>
+							<td><button type="button" onclick="clearvisor()"><=</button></td>
+							<td><button type="button" onclick="igual()">=</button></td>
+						</tr>
+					</tbody>
+				</table>
 
-			<table>
-				<tbody>
-					<tr>
-						<td><button type="button" value="7" onclick="send(this.value)">7</button></td>
-						<td><button type="button" value="8" onclick="send(this.value)">8</button></td>
-						<td><button type="button" value="9" onclick="send(this.value)">9</button></td>
-					</tr>
-					<tr>
-						<td><button type="button" value="4" onclick="send(this.value)">4</button></td>
-						<td><button type="button" value="5" onclick="send(this.value)">5</button></td>
-						<td><button type="button" value="6" onclick="send(this.value)">6</button></td>
-					</tr>
-					<tr>
-						<td><button type="button" value="1" onclick="send(this.value)">1</button></td>
-						<td><button type="button" value="2" onclick="send(this.value)">2</button></td>
-						<td><button type="button" value="3" onclick="send(this.value)">3</button></td>
-					</tr>
-					<tr>
-						<td><button type="button" value="0" onclick="send(this.value)">0</button></td>
-						<td><button type="button" value="." onclick="send(this.value)">.</button></td>
-						<td><button type="button" onclick="clearvisor()">C</button></td>
-					</tr>
-				</tbody>
-			</table>
-
-		</form>
+			</form>
+		</div>
 	</div>
-
-	
 </body>
 </html>
