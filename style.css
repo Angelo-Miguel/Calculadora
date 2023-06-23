@@ -11,7 +11,7 @@ table{
 }
 
 .escrito{
-	position: sticky;
+	margin: 0px;
 	text-align: right;
 	font-size: x-large;
 }
