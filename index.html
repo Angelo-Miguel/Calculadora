@@ -9,13 +9,13 @@
 <body>
 	<script>
 
-		function send(buttonValue) {
+		function enviarnumero(valorbotao) {
 			var currentValue = document.getElementById("visor").innerHTML;
-			var updatedValue = currentValue + buttonValue;
+			var updatedValue = currentValue + valorbotao;
 			document.getElementById("visor").innerHTML = updatedValue;
 		}
 
-		function clearvisor(){
+		function limparvisor(){
 			document.getElementById("visor").innerHTML = "";
 		}
 
@@ -23,6 +23,11 @@
 			number1 = document.getElementById("visor").innerHTML;
 			operator1 = testeop;
 			document.getElementById("visor").innerHTML = '';
+		}
+
+		function limpardigito(){
+			currentValue = updatedValue.slice(0, -1);
+			enviarnumero();
 		}
 
 		function igual() {
@@ -66,33 +71,33 @@
 					</thead>
 					<tbody>
 						<tr>
-							<td><button type="button" onclick="clearvisor()">C</button></td>
+							<td><button type="button" onclick="limparvisor()">C</button></td>
 							<td><button type="button" value="**" onclick="operador(this.value)">^</button></td>
 							<td><button type="button" value="sqrt" onclick="operador(this.value)">√</button></td>
 							<td><button type="button" value="/" onclick="operador(this.value)">/</button></td>
 						</tr>
 						<tr>
-							<td><button type="button" value="7" onclick="send(this.value)">7</button></td>
-							<td><button type="button" value="8" onclick="send(this.value)">8</button></td>
-							<td><button type="button" value="9" onclick="send(this.value)">9</button></td>
+							<td><button type="button" value="7" onclick="enviarnumero(this.value)">7</button></td>
+							<td><button type="button" value="8" onclick="enviarnumero(this.value)">8</button></td>
+							<td><button type="button" value="9" onclick="enviarnumero(this.value)">9</button></td>
 							<td><button type="button" value="*" onclick="operador(this.value)">x</button></td>
 						</tr>
 						<tr>
-							<td><button type="button" value="4" onclick="send(this.value)">4</button></td>
-							<td><button type="button" value="5" onclick="send(this.value)">5</button></td>
-							<td><button type="button" value="6" onclick="send(this.value)">6</button></td>
+							<td><button type="button" value="4" onclick="enviarnumero(this.value)">4</button></td>
+							<td><button type="button" value="5" onclick="enviarnumero(this.value)">5</button></td>
+							<td><button type="button" value="6" onclick="enviarnumero(this.value)">6</button></td>
 							<td><button type="button" value="-" onclick="operador(this.value)">-</button></td>
 						</tr>
 						<tr>
-							<td><button type="button" value="1" onclick="send(this.value)">1</button></td>
-							<td><button type="button" value="2" onclick="send(this.value)">2</button></td>
-							<td><button type="button" value="3" onclick="send(this.value)">3</button></td>
+							<td><button type="button" value="1" onclick="enviarnumero(this.value)">1</button></td>
+							<td><button type="button" value="2" onclick="enviarnumero(this.value)">2</button></td>
+							<td><button type="button" value="3" onclick="enviarnumero(this.value)">3</button></td>
 							<td><button type="button" value="+" onclick="operador(this.value)">+</button></td>
 						</tr>
 						<tr>
-							<td><button type="button" value="0" onclick="send(this.value)">0</button></td>
-							<td><button type="button" value="." onclick="send(this.value)">.</button></td>
-							<td><button type="button" onclick="clearvisor()"><=</button></td>
+							<td><button type="button" value="0" onclick="enviarnumero(this.value)">0</button></td>
+							<td><button type="button" value="." onclick="enviarnumero(this.value)">.</button></td>
+							<td><button type="button" onclick="limpardigito()">⌫</button></td>
 							<td><button type="button" onclick="igual()">=</button></td>
 						</tr>
 					</tbody>
