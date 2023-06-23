@@ -12,7 +12,8 @@ table{
 }
 
 .escrito{
-	margin: 0px;
+	border: 1px solid gray;
+	margin: 0px 2px;
 	text-align: right;
 	font-size: x-large;
 }
