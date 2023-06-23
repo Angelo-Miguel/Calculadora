@@ -15,6 +15,12 @@
 			document.getElementById("visor").innerHTML = updatedValue;
 		}
 
+		function limpardigito(){
+			currentValue = document.getElementById("visor").innerHTML;
+		    updatedValue = currentValue.slice(0, -1);
+			document.getElementById("visor").innerHTML = updatedValue;
+		}
+
 		function limparvisor(){
 			document.getElementById("visor").innerHTML = "";
 		}
@@ -23,11 +29,6 @@
 			number1 = document.getElementById("visor").innerHTML;
 			operator1 = testeop;
 			document.getElementById("visor").innerHTML = '';
-		}
-
-		function limpardigito(){
-			updatedValue = updatedValue.slice(0, -1);
-			document.getElementById("visor").innerHTML = updatedValue;
 		}
 
 		function igual() {
