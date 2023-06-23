@@ -7,11 +7,11 @@ table{
 }
 
 .visor{
-	height: 25px;
+	height: 50px;
 }
 
 .escrito{
-	position: relative;
+	position: sticky;
 	text-align: right;
 	font-size: x-large;
 }
