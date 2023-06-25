@@ -6,12 +6,17 @@
 	<title>Calculadora</title>
 	<link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body onload="teste">
 	<script>
 
 		function enviarnumero(valorbotao) {
 			var currentValue = document.getElementById("visor").innerHTML;
 			var updatedValue = currentValue + valorbotao;
+
+function teste(){
+document.getElementbyid("visor").innerHTML = "calculadora";
+}
+
 
 			var maxLength = 14;
 			if (updatedValue.length > maxLength) {
