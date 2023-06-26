@@ -47,3 +47,14 @@ button{
 	color: rgb(217, 226, 233);
 	border: 0px;
 }
+
+button:hover {
+    background-color: rgb(217, 226, 233);
+    color: rgb(69, 69, 69);
+    cursor: pointer;
+}
+
+.operador.ativo {
+	background-color: rgb(217, 226, 233);
+    color: rgb(69, 69, 69);
+  }
