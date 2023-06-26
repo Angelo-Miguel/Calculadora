@@ -4,7 +4,7 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Calculadora 0.2</title>
+	<title>Calculadora 0.3</title>
 	<link rel="stylesheet" href="style.css">
 
 </head>
@@ -77,10 +77,7 @@
 					result = Math.pow(parseFloat(number1), number2);
 					break;
 				case '√':
-					if (number2 == 1) {
-						number2 = 2;
-					}
-					result = Math.sqrt(parseFloat(number2 * number1));
+					result = Math.sqrt(parseFloat(number2));
 					break;
 				default:
 					result = '';
