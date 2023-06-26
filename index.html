@@ -77,7 +77,10 @@
 					result = Math.pow(parseFloat(number1), number2);
 					break;
 				case '√':
-					result = Math.sqrt(parseFloat(number1));
+					if (number2 == 1) {
+						number2 = 2;
+					}
+					result = Math.sqrt(parseFloat(number2 * number1));
 					break;
 				default:
 					result = '';
