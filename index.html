@@ -1,140 +1,58 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+	<head>
+		<meta charset="UTF-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0">
+		<title>Calculadora 0.4</title>
+		<link rel="stylesheet" href="style.css">
+		<script src="script.js"></script>
+	</head>
+	<body>
+		<div id="calculadora">
+			<div class="calc">
+				<form method="post">
+					<table>
+						<thead>
+							<td colspan="4" class="visor">
+								<p id="visor" class="escrito"></p>
+							</td>
+						</thead>
+						<tbody>
+							<tr>
+								<td><button class="limpar" type="button" onclick="limparvisor()">AC</button></td>
+								<td><button class="operador" type="button" value="^" onclick="operador(this.value)">^</button></td>
+								<td><button class="operador" type="button" value="√" onclick="operador(this.value)">√</button></td>
+								<td><button class="operador" type="button" value="/" onclick="operador(this.value)">/</button></td>
+							</tr>
+							<tr>
+								<td><button class="numero" type="button" value="7" onclick="enviarnumero(this.value)">7</button></td>
+								<td><button class="numero" type="button" value="8" onclick="enviarnumero(this.value)">8</button></td>
+								<td><button class="numero" type="button" value="9" onclick="enviarnumero(this.value)">9</button></td>
+								<td><button class="operador" type="button" value="*" onclick="operador(this.value)">x</button></td>
+							</tr>
+							<tr>
+								<td><button class="numero" type="button" value="4" onclick="enviarnumero(this.value)">4</button></td>
+								<td><button class="numero" type="button" value="5" onclick="enviarnumero(this.value)">5</button></td>
+								<td><button class="numero" type="button" value="6" onclick="enviarnumero(this.value)">6</button></td>
+								<td><button class="operador" type="button" value="-" onclick="operador(this.value)">-</button></td>
+							</tr>
+							<tr>
+								<td><button class="numero" type="button" value="1" onclick="enviarnumero(this.value)">1</button></td>
+								<td><button class="numero" type="button" value="2" onclick="enviarnumero(this.value)">2</button></td>
+								<td><button class="numero" type="button" value="3" onclick="enviarnumero(this.value)">3</button></td>
+								<td><button class="operador" type="button" value="+" onclick="operador(this.value)">+</button></td>
+							</tr>
+							<tr>
+								<td><button class="numero" type="button" value="0" onclick="enviarnumero(this.value)">0</button></td>
+								<td><button class="numero" type="button" value="." onclick="enviarnumero(this.value)">.</button></td>
+								<td><button class="numero" type="button" onclick="limpardigito()">⌫</button></td>
+								<td><button class="operador" type="button" onclick="igual()">=</button></td>
+							</tr>
+						</tbody>
+					</table>
 
-<head>
-	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<title>Calculadora 0.3</title>
-	<link rel="stylesheet" href="style.css">
-</head>
-
-<body>
-	<script>
-
-		function enviarnumero(valorbotao) {
-			var currentValue = document.getElementById("visor").innerHTML;
-			var updatedValue = currentValue + valorbotao;
-
-			var maxLength = 12;
-			if (updatedValue.length > maxLength) {
-				updatedValue = updatedValue.substring(0, maxLength);
-			}
-			document.getElementById("visor").innerHTML = updatedValue;
-		}
-
-		function limpardigito() {
-			currentValue = document.getElementById("visor").innerHTML;
-			updatedValue = currentValue.slice(0, -1);
-			document.getElementById("visor").innerHTML = updatedValue;
-		}
-
-		function limparvisor() {
-			document.getElementById("visor").innerHTML = "";
-
-			limparbotao();
-		}
-
-		function limparbotao(){
-			var activeButton = document.querySelector('.operador.ativo');
-			if (activeButton) {
-				activeButton.classList.remove('ativo');
-			}
-		}
-
-		function operador(testeop) {
-			limparbotao();
-			var clickedButton = document.querySelector('.operador[value="' + testeop + '"]');
-			clickedButton.classList.add('ativo');
-
-			number1 = document.getElementById("visor").innerHTML;
-			operator1 = testeop;
-			document.getElementById("visor").innerHTML = '';
-		}
-
-
-		function igual() {
-			var number2 = parseFloat(document.getElementById("visor").innerHTML);
-			var result = "";
-
-			switch (operator1) {
-				case '+':
-					result = parseFloat(number1) + number2;
-					break;
-				case '-':
-					result = parseFloat(number1) - number2;
-					break;
-				case '*':
-					result = parseFloat(number1) * number2;
-					break;
-				case '/':
-					result = parseFloat(number1) / number2;
-					break;
-				case '^':
-					if (number2 == 1) {
-						number2 = 2;
-					}
-					result = Math.pow(parseFloat(number1), number2);
-					break;
-				case '√':
-					result = Math.sqrt(parseFloat(number2));
-					break;
-				default:
-					result = '';
-			}
-
-			document.getElementById("visor").innerHTML = result.toString();
-
-			limparbotao();
-		}
-
-
-	</script>
-	<div id="calculadora">
-		<div class="calc">
-			<form method="post">
-				<table>
-					<thead>
-						<td colspan="4" class="visor">
-							<p id="visor" class="escrito"></p>
-						</td>
-					</thead>
-					<tbody>
-						<tr>
-							<td><button class="limpar" type="button" onclick="limparvisor()">AC</button></td>
-							<td><button class="operador" type="button" value="^" onclick="operador(this.value)">^</button></td>
-							<td><button class="operador" type="button" value="√" onclick="operador(this.value)">√</button></td>
-							<td><button class="operador" type="button" value="/" onclick="operador(this.value)">/</button></td>
-						</tr>
-						<tr>
-							<td><button class="numero" type="button" value="7" onclick="enviarnumero(this.value)">7</button></td>
-							<td><button class="numero" type="button" value="8" onclick="enviarnumero(this.value)">8</button></td>
-							<td><button class="numero" type="button" value="9" onclick="enviarnumero(this.value)">9</button></td>
-							<td><button class="operador" type="button" value="*" onclick="operador(this.value)">x</button></td>
-						</tr>
-						<tr>
-							<td><button class="numero" type="button" value="4" onclick="enviarnumero(this.value)">4</button></td>
-							<td><button class="numero" type="button" value="5" onclick="enviarnumero(this.value)">5</button></td>
-							<td><button class="numero" type="button" value="6" onclick="enviarnumero(this.value)">6</button></td>
-							<td><button class="operador" type="button" value="-" onclick="operador(this.value)">-</button></td>
-						</tr>
-						<tr>
-							<td><button class="numero" type="button" value="1" onclick="enviarnumero(this.value)">1</button></td>
-							<td><button class="numero" type="button" value="2" onclick="enviarnumero(this.value)">2</button></td>
-							<td><button class="numero" type="button" value="3" onclick="enviarnumero(this.value)">3</button></td>
-							<td><button class="operador" type="button" value="+" onclick="operador(this.value)">+</button></td>
-						</tr>
-						<tr>
-							<td><button class="numero" type="button" value="0" onclick="enviarnumero(this.value)">0</button></td>
-							<td><button class="numero" type="button" value="." onclick="enviarnumero(this.value)">.</button></td>
-							<td><button class="numero" type="button" onclick="limpardigito()">⌫</button></td>
-							<td><button class="operador" type="button" onclick="igual()">=</button></td>
-						</tr>
-					</tbody>
-				</table>
-
-			</form>
+				</form>
+			</div>
 		</div>
-	</div>
-</body>
-
+	</body>
 </html>
