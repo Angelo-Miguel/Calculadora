@@ -3,6 +3,11 @@ body{
 }
 
 table{
+	/* scale: 100%;
+	min-width: 100%;
+	border-collapse: collapse;
+	width: 100%;*/
+	text-align: center;
 	margin: auto;
 	padding: 8px;
 	background-color: rgb(69, 69, 69);
