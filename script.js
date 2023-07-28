@@ -69,7 +69,7 @@ function enviarnumero(valorbotao) {
 					result = '';
 			}
 
-			document.getElementById("visor").innerHTML = result.toString();
+			document.getElementById("visor").innerHTML = result.toString();.substring(0, maxLength);
 
 			limparbotao();
 		}
