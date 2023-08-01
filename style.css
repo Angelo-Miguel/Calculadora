@@ -2,6 +2,13 @@ body {
   background-color: aliceblue;
 }
 
+#calculadora {
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 table {
   margin: auto;
   padding: 2%;
@@ -60,9 +67,7 @@ button:hover {
   color: rgb(69, 69, 69);
 }
 
-/* Media Queries */
 @media (max-width: 768px) {
-  /* Adjust styles for smaller screens */
   .escrito {
     font-size: 2vh;
   }
@@ -75,7 +80,6 @@ button:hover {
 }
 
 @media (max-width: 480px) {
-  /* Further adjust styles for mobile devices */
   .escrito {
     font-size: 1.5vh;
   }
