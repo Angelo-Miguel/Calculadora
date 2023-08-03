@@ -2,13 +2,6 @@ body {
   background-color: aliceblue;
 }
 
-#calculadora {
-  height: 100vh;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
 table {
   margin: auto;
   padding: 2%;
@@ -65,28 +58,4 @@ button:hover {
 .operador.ativo {
   background-color: rgb(217, 226, 233);
   color: rgb(69, 69, 69);
-}
-
-@media (max-width: 768px) {
-  .escrito {
-    font-size: 2vh;
-  }
-
-  button {
-    width: 15vw;
-    height: 15vw;
-    font-size: 2vh;
-  }
-}
-
-@media (max-width: 480px) {
-  .escrito {
-    font-size: 1.5vh;
-  }
-
-  button {
-    width: 20vw;
-    height: 20vw;
-    font-size: 1.5vh;
-  }
 }
