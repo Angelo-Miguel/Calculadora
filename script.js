@@ -64,7 +64,7 @@ function igual() {
       result = Math.pow(parseFloat(number1), number2);
       break;
     case "√":
-      result = Math.sqrt(parseFloat(number2));
+      result = Math.sqrt(parseFloat(number1));
       break;
     default:
       result = "Error";
